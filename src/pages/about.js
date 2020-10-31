@@ -1,10 +1,10 @@
 import React from "react"
 
-const AboutPage = () => (
+const About = () => (
   <main>
     <h1>About Allison</h1>
     <p>Welcome to my Gatsby site!</p>
   </main>
 )
 
-export default AboutPage
+export default About
