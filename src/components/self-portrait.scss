@@ -1,0 +1,219 @@
+/* inspired by Sasha Tran. thank you!
+
+https://codepen.io/sashatran/pen/BpPdMb */
+
+$skin: #F0BEAF;
+$hair: #424B54;
+$blush: #DC9596;
+
+@mixin glasses() {
+	clip-path: polygon(100% 39%, 74% 65%, 54% 64%, 39% 51%, 29% 30%);
+}
+
+.container,
+.hair,
+.face,
+.bangs-left,
+.bangs-right,
+.glasses-inside,
+.eyes,
+.blush,
+.nose,
+.mouth,
+.tongue,
+.neck, 
+.shirt {
+	position: absolute;
+}
+
+.container {
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+	width: 200px;
+	height: 200px;
+}
+
+.intro {
+	font-size: 48px;
+	font-weight: bold;
+	font-style: italic;
+	color: white;
+	margin-bottom: 40px;
+}
+
+.profile {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	border: 2px solid white;
+	border-radius: 50%;
+	background: #E8E9EB;
+	overflow: hidden;
+}
+
+.face {
+	width: 40%;
+	height: 37%;
+	top: 40%;
+	left: 30%;
+	background: $skin;
+	border-radius: 10px 10px 50px 50px;
+	z-index: 3;
+}
+
+// todo: shave? wave?
+.hair {
+	width: 55%;
+	height: 60%;
+	top: 20%;
+	left: 23%;
+	background: $hair;
+	border-radius: 100px 100px 20px 20px;
+}
+
+.bangs {
+	&-left {
+		width: 21%;
+		height: 12%;
+		top: 37%;
+		left: 29%;
+		background: $hair;
+		z-index: 4;
+		clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+	}
+	
+	&-right {
+		width: 21%;
+		height: 12%;
+		top: 37%;
+		right: 30%;
+		background: $hair;
+		z-index: 4;
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+	}
+}
+
+// todo: ::after pseudo-element, reflect element
+.glasses {
+	position: relative;
+	width: 12vmin;
+	height: 14vmin;
+	top: 79px;
+	// bottom: 0%;
+	left: 40px;
+	// border: 1px solid black;
+	background: black;
+	@include glasses();
+	z-index: 4;
+	
+	&-inside {
+		top: 10px;
+		bottom: 10px;
+		left: 10px;
+		right: 9px;
+		background: $skin;
+		@include glasses();
+	}
+}
+
+.eyes {
+	width: 5%;
+	height: 5%;
+	top: 53%;
+	left: 35%;
+	background: $hair;
+	border-radius: 100%;
+	z-index: 4;
+	box-shadow: 40px 0 $hair; // right eye
+}
+
+.blush {
+	width: 6%;
+	height: 4%;
+	top: 60%;
+	left: 33%;
+	background: $blush;
+	border-radius: 100%;
+	z-index: 3;
+	box-shadow: 47px 0 $blush; // right blush
+}
+
+.nose {
+	width: 4%;
+	height: 8%;
+	top: 53%;
+	left: 45%;
+	border-radius: 10px;
+	background: $blush;
+	z-index: 3;
+	
+	// // uncomment for some fun:
+	// // play this: https://www.youtube.com/watch?v=UWhKa7M52BA
+	// background: red;
+	// border-radius: 100px;
+	// width: 10%;
+	// height: 10%;
+	// top: 52%;
+	// left: 42%;
+}
+
+.mouth {
+	width: 14%;
+	height: 8%;
+	top: 63%;
+	left: 41%;
+	background: $hair;
+	border-radius: 0 0 100px 100px;
+	z-index: 3;
+	overflow: hidden;
+}
+
+.tongue {
+	width: 60%;
+	height: 60%;
+	top: 50%;
+	left: 30%;
+	background: #FF6B6B;
+	border-radius: 100%;
+}
+
+.neck {
+	width: 15%;
+	height: 15%;
+	top: 69%;
+	left: 42%;
+	background: $skin;
+	z-index: 2;
+	border-radius: 100%;
+}
+
+.shirt {
+	width: 50%;
+	height: 40%;
+	top: 75%;
+	left: 25%;
+	background: #E94F37;
+	z-index: 1;
+	border-radius: 100%;
+	background: repeating-radial-gradient(
+		ellipse farthest-corner at -50% -20%, 
+		#78A1BB 0, 
+		#78A1BB 10px, 
+		#E94F37 10px, 
+		#E94F37 20px
+	);
+}
+
+// .default {
+	// width: 40%;
+	// height: 40%;
+	// top: 40%;
+	// left: 40%;
+	// background: white;
+	// z-index: 2;
+	// border-radius: 100%;
+// }
+
