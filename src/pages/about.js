@@ -1,10 +1,11 @@
 import React from "react"
+import Layout from "../components/layout"
 
-const About = () => (
-  <main>
-    <h1>About Allison</h1>
-    <p>Welcome to my Gatsby site!</p>
-  </main>
-)
-
-export default About
+export default function About() {
+  return (
+    <Layout>
+      <h2>About h2 w page layout testy</h2>
+      <p>Welcome to my Gatsby site!</p>
+    </Layout>
+  )
+}
