@@ -1,0 +1,21 @@
+// hi
+
+html {
+  font-family: serif;
+}
+
+a {
+  &:hover {
+    background-color: teal;
+    color: white;
+  }
+
+  &:focus {
+    outline: 1px dotted teal;
+  }
+
+  &:active {
+    background-color: darkcyan;
+    color: white;
+  }
+}
